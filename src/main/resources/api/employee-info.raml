@@ -1,0 +1,119 @@
+#%RAML 1.0
+title: employee-info
+/add-employee:
+  post:
+    body:
+      application/json:
+        example: {
+          empid: 1,
+          empname: shiva,
+          status: 'A'
+        }
+    responses:
+      200:
+        body:
+          application/json:
+            example: {
+              message: "sucessful"
+            }
+      500:
+        body:
+          application/json:
+            example: {
+              message: server error
+            }
+/update-employee:
+  description: To update an employee status
+  post:
+    body:
+      application/xml:
+        example:
+          <TITLE>Empire Burlesque</TITLE>
+          <ARTIST>Bob Dylan</ARTIST>
+          <COUNTRY>USA</COUNTRY>
+          <COMPANY>Columbia</COMPANY>
+          <PRICE>10.90</PRICE>
+          <YEAR>1985</YEAR>
+    responses:
+        200:
+            body:
+              application/xml:
+                example:
+                  <response>
+                    <status>200</status>
+                    <msg>success</msg>
+                  </response>
+        500:
+            body:
+              application/xml:
+                example:
+                  <response>
+                    <status>500</status>
+                    <msg>server error</msg>
+                  </response>
+/fetch-employee:
+  get:
+    queryParameters:
+      empid:
+        displayName: employee id
+        required: true
+        type: integer
+        example: 500
+      status:
+        displayName: status id
+        required: true
+        type: integer
+        example: 500
+    responses:
+      200:
+        body:
+          application/json:
+            example: {
+            empid: 1,
+            empname: shiva,
+            status: 'A'
+          }
+      400:
+        body:
+          application/json:
+            example: {
+              status: 404,
+              message: "no employee not found"
+            }
+      500:
+          body:
+            application/json:
+              example: {
+              status: 500,
+              message: " server error"
+            }
+/delete-employee/{empid}:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: {
+            empid: 1,
+            empname: shiva,
+            status: 'A'
+          }
+      400:
+        body:
+          application/json:
+            example: {
+              status: 404,
+              message: "no employee not found"
+            }
+      500:
+          body:
+            application/json:
+              example: {
+              status: 500,
+              message: " server error"
+            } 
+     
+
+             
+              
+          
