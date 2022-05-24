@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -30,15 +32,15 @@
 						<configuration>
 							<cloudHubDeployment>
 								<applicationName>dev-emp-mule-api</applicationName>
-								<environment>Sandbox</environment>
+								<environment>dev</environment>
 								<region>us-east-1</region>
 								<workers>1</workers>
 								<workerType>MICRO</workerType>
 								<objectStoreV2>true</objectStoreV2>
 								<properties>
 									<env>dev</env>
-									<anypoint.platform.client_id>cc93e25b54964a5e92c27982819e31ac</anypoint.platform.client_id>
-									<anypoint.platform.client_secret>2A7B929F09574A90B1F8f69bBDF288EF</anypoint.platform.client_secret>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
 								</properties>
 							</cloudHubDeployment>
 						</configuration>
@@ -90,8 +92,8 @@
 								<objectStoreV2>true</objectStoreV2>
 								<properties>
 									<env>test</env>
-									<anypoint.platform.client_id>dad8765fcf514fa98a0fb0eafe211f13</anypoint.platform.client_id>
-									<anypoint.platform.client_secret>53f48ef77ea8453FBAccDE18BFA4Eed3</anypoint.platform.client_secret>
+									<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+									<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
 								</properties>
 							</cloudHubDeployment>
 						</configuration>
@@ -119,8 +121,8 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.3.0</muleVersion>
-						<username>shivarajsandi1</username>
-						<password>Shivaraj1</password>
+						<username>${username}</username>
+						<password>${password}</password>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
 							<http.port>8081</http.port>
