@@ -139,7 +139,7 @@ output application/json
 ---
 {
   empid: 1,
-  empname: "shiva",
+  empname: "shiva Raj",
   status: "A"
 }]]></ee:set-payload>
             </ee:message>
